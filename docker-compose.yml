@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+    pg:
+        container_name: pg
+        ports:
+            - '5432:5432'
+        restart: always
+        image: bitnami/postgresql
+        environment:
+            - 'POSTGRESQL_PASSWORD=lonPYf7dBj6XXH26'
+    grafana:
+        container_name: grafana
+        environment:
+            - 'root_url=%(protocol)s://%(domain)s/yumi/'
+            - 'domain=podkolzin.consulting'
+        ports:
+            - '8081:3000'
+        image: monitoringartist/grafana-xxl
+        depends_on:
+            - pg
