@@ -15,6 +15,6 @@ services:
             - 'domain=podkolzin.consulting'
         ports:
             - '8081:3000'
-        image: monitoringartist/grafana-xxl
+        image: grafana-foldered
         depends_on:
             - pg
