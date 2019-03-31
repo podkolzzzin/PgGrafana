@@ -11,8 +11,8 @@ services:
     grafana:
         container_name: grafana
         environment:
-            - 'root_url=%(protocol)s://%(domain)s/yumi/'
             - 'domain=podkolzin.consulting'
+            - 'GF_SERVER_ROOT_URL=http://podkolzin.consulting/grafana'
         ports:
             - '8081:3000'
         image: monitoringartist/grafana-xxl
